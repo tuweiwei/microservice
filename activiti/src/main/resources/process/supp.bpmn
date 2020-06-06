@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:activiti="http://activiti.org/bpmn" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:tns="http://www.activiti.org/testm1574124674914" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" expressionLanguage="http://www.w3.org/1999/XPath" id="m1574124674914" name="" targetNamespace="http://www.activiti.org/testm1574124674914" typeLanguage="http://www.w3.org/2001/XMLSchema">
+  <process id="Process_12-2" isClosed="false" isExecutable="true" name="鐠囧嘲浜ｅù浣衡柤29-1" processType="None">
+    <startEvent id="StartEvent_1" name="瀵拷婵濡悙锟�?"/>
+    <startEvent id="StartEvent_2" name="Start Event 2"/>
+    <exclusiveGateway default="SequenceFlow_0b87ucf" gatewayDirection="Unspecified" id="ExclusiveGateway_173hwsm" name="閹烘帊绮純鎴濆�?"/>
+    <userTask activiti:assignee="${user}" activiti:exclusive="true" camunda:assignee="${user}" id="UserTask_006varg" name="鐎光剝澹掗妴鎰疆闂�瑁わ拷锟�"/>
+    <userTask activiti:assignee="${user}" activiti:exclusive="true" camunda:assignee="${user}" id="UserTask_0v9t159" name="鐎光剝澹掗妴鎰拷浣哥瑎閵嗭�?"/>
+    <userTask activiti:assignee="${director}" activiti:exclusive="true" camunda:assignee="${user}" id="UserTask_0cexsmw" name="鐎光剝澹掗妴鎰瘜娴犳眹锟斤�?"/>
+    <sequenceFlow id="SequenceFlow_174x14w" sourceRef="StartEvent_1" targetRef="ExclusiveGateway_173hwsm"/>
+    <sequenceFlow id="SequenceFlow_0b87ucf" sourceRef="ExclusiveGateway_173hwsm" targetRef="UserTask_006varg"/>
+    <sequenceFlow id="SequenceFlow_1mlwknm" name="婢堆傜艾3婢垛晛鐨禍锟�7婢讹�?" sourceRef="ExclusiveGateway_173hwsm" targetRef="UserTask_0v9t159">
+      <conditionExpression xsi:type="tFormalExpression">
+        <![CDATA[
+        ]]>
+      </conditionExpression>
+    </sequenceFlow>
+    <sequenceFlow id="SequenceFlow_1jijyf9" name="婢堆傜艾7婢垛晛鐨禍锟�15婢讹�?" sourceRef="ExclusiveGateway_173hwsm" targetRef="UserTask_1yhjmto">
+      <conditionExpression xsi:type="tFormalExpression">
+        <![CDATA[
+        ]]>
+      </conditionExpression>
+    </sequenceFlow>
+    <sequenceFlow id="SequenceFlow_0a2oxf7" name="婢堆傜艾15鐏忓繋绨�?30婢讹�?" sourceRef="ExclusiveGateway_173hwsm" targetRef="ExclusiveGateway_16xhotd">
+      <conditionExpression xsi:type="tFormalExpression">
+        <![CDATA[
+        ]]>
+      </conditionExpression>
+    </sequenceFlow>
+    <parallelGateway gatewayDirection="Unspecified" id="ExclusiveGateway_16xhotd" name="楠炴儼顢戠純鎴濆�?1閸欙�?"/>
+    <sequenceFlow id="SequenceFlow_1pgr7xf" name="楠炴儼顢�?-閼颁礁绗�?" sourceRef="ExclusiveGateway_16xhotd" targetRef="Task_1ckj7m2">
+      <extensionElements>
+        <activiti:executionListener class="com.bzgwl.mybatis_plus.web.activitiListeners.MyExecutionListener" event="take"/>
+        <activiti:properties>
+          <activiti:property name="messages" value="楠炴儼顢戠純鎴濆彠閸掓媽锟戒礁绗�?"/>
+        </activiti:properties>
+      </extensionElements>
+    </sequenceFlow>
+    <userTask activiti:assignee="${teacher}" activiti:exclusive="true" camunda:assignee="${user}" id="Task_1ckj7m2" name="鐎光剝澹掗妴鎰拷浣哥瑎閵嗭�?"/>
+    <sequenceFlow id="SequenceFlow_15pxa9h" name="楠炴儼顢�?-娑撹鎹�?" sourceRef="ExclusiveGateway_16xhotd" targetRef="UserTask_0cexsmw">
+      <extensionElements>
+        <activiti:executionListener class="com.bzgwl.mybatis_plus.web.activitiListeners.MyExecutionListener" event="take"/>
+        <activiti:properties>
+          <activiti:property name="messages" value="楠炴儼顢戠純鎴濆彠閸掗瀵屾禒锟�?"/>
+        </activiti:properties>
+      </extensionElements>
+    </sequenceFlow>
+    <endEvent id="EndEvent_0vxfvsc"/>
+    <sequenceFlow id="SequenceFlow_0162nyl" name="娑撳秴鎮撻幇锟�" sourceRef="UserTask_0cexsmw" targetRef="EndEvent_0vxfvsc">
+      <conditionExpression xsi:type="tFormalExpression">
+        <![CDATA[
+        ]]>
+      </conditionExpression>
+    </sequenceFlow>
+    <sequenceFlow id="SequenceFlow_0njlz92" name="娑撳秴鎮撻幇锟�" sourceRef="Task_1ckj7m2" targetRef="EndEvent_0vxfvsc">
+      <conditionExpression xsi:type="tFormalExpression">
+        <![CDATA[
+        ]]>
+      </conditionExpression>
+    </sequenceFlow>
+    <endEvent id="EndEvent_0wpca53" name="缂佸牊顒涢懞鍌滃�?"/>
+    <userTask activiti:assignee="admin" activiti:exclusive="true" camunda:assignee="鐎涙梹鐗庨梹锟�" id="UserTask_07bqdfg" name="閺嶏繝鏆遍妴鎰�?閹靛箍锟斤拷"/>
+    <sequenceFlow id="SequenceFlow_13wrv8p" name="閸氬本鍓�?" sourceRef="Task_1ckj7m2" targetRef="ExclusiveGateway_0ogqnc4">
+      <conditionExpression xsi:type="tFormalExpression">
+        <![CDATA[
+        ]]>
+      </conditionExpression>
+    </sequenceFlow>
+    <sequenceFlow id="SequenceFlow_1j8rvd6" name="閸氬本鍓�?" sourceRef="UserTask_0cexsmw" targetRef="ExclusiveGateway_0ogqnc4">
+      <conditionExpression xsi:type="tFormalExpression">
+        <![CDATA[
+        ]]>
+      </conditionExpression>
+    </sequenceFlow>
+    <sequenceFlow id="SequenceFlow_0kwwsmi" sourceRef="UserTask_0v9t159" targetRef="EndEvent_0wpca53"/>
+    <sequenceFlow id="SequenceFlow_027b4lj" sourceRef="UserTask_006varg" targetRef="EndEvent_0wpca53"/>
+    <parallelGateway gatewayDirection="Unspecified" id="ExclusiveGateway_0ogqnc4" name="楠炴儼顢戠純鎴濆�?2閸欙�?"/>
+    <sequenceFlow id="SequenceFlow_1vc5sps" sourceRef="ExclusiveGateway_0ogqnc4" targetRef="UserTask_07bqdfg"/>
+    <sequenceFlow id="SequenceFlow_08uyqyq" sourceRef="UserTask_07bqdfg" targetRef="EndEvent_0wpca53"/>
+    <sequenceFlow id="SequenceFlow_186c70i" sourceRef="UserTask_1yhjmto" targetRef="EndEvent_0wpca53"/>
+    <userTask activiti:assignee="${user}" activiti:exclusive="true" id="UserTask_1yhjmto" name="鐎光剝澹掗妴鎰瘜娴犳眹锟斤�?"/>
+    <userTask activiti:assignee="lizr" activiti:exclusive="true" id="UserTask_0vx7s25" name="鐎光剝澹掗妴鎰瘜娴犳眹锟斤�?"/>
+    <sequenceFlow id="SequenceFlow_1ayyw2v" name="婢堆傜艾30婢讹�?" sourceRef="ExclusiveGateway_173hwsm" targetRef="UserTask_0vx7s25">
+      <conditionExpression xsi:type="tFormalExpression">
+        <![CDATA[
+        ]]>
+      </conditionExpression>
+    </sequenceFlow>
+    <sequenceFlow id="SequenceFlow_1mcltqi" sourceRef="UserTask_0vx7s25" targetRef="Task_1idf8u6"/>
+    <userTask activiti:assignee="admin" activiti:exclusive="true" id="Task_1idf8u6" name="閺嶏繝鏆遍妴鎰�?閹靛箍锟斤拷"/>
+    <sequenceFlow id="SequenceFlow_1xa5oh9" name="閸氬本鍓�?" sourceRef="Task_1idf8u6" targetRef="EndEvent_0wpca53">
+      <conditionExpression xsi:type="tFormalExpression">
+        <![CDATA[
+        ]]>
+      </conditionExpression>
+    </sequenceFlow>
+    <sequenceFlow id="SequenceFlow_04xjxsz" name="妞瑰啿娲�?" sourceRef="Task_1idf8u6" targetRef="UserTask_0vx7s25">
+      <conditionExpression xsi:type="tFormalExpression">
+        <![CDATA[
+        ]]>
+      </conditionExpression>
+    </sequenceFlow>
+  </process>
+  <bpmndi:BPMNDiagram documentation="background=#3C3F41;count=1;horizontalcount=2;orientation=0;width=842.4;height=1195.2;imageableWidth=832.4;imageableHeight=1185.2;imageableX=5.0;imageableY=5.0" id="Diagram-_1" name="New Diagram">
+    <bpmndi:BPMNPlane bpmnElement="Process_12-2">
+      <bpmndi:BPMNShape bpmnElement="StartEvent_1" id="Shape-StartEvent_1">
+        <dc:Bounds height="32.0" width="32.0" x="462.0" y="12.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="32.0" width="32.0" x="0.0" y="0.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="ExclusiveGateway_173hwsm" id="Shape-ExclusiveGateway_173hwsm" isMarkerVisible="true">
+        <dc:Bounds height="32.0" width="32.0" x="455.0" y="75.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="32.0" width="32.0" x="0.0" y="0.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="UserTask_006varg" id="Shape-UserTask_006varg">
+        <dc:Bounds height="80.0" width="100.0" x="150.0" y="180.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="80.0" width="100.0" x="0.0" y="0.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="UserTask_0v9t159" id="Shape-UserTask_0v9t159">
+        <dc:Bounds height="80.0" width="100.0" x="290.0" y="180.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="80.0" width="100.0" x="0.0" y="0.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="UserTask_0cexsmw" id="Shape-UserTask_0cexsmw">
+        <dc:Bounds height="80.0" width="100.0" x="620.0" y="180.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="80.0" width="100.0" x="0.0" y="0.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="ExclusiveGateway_16xhotd" id="Shape-ExclusiveGateway_16xhotd">
+        <dc:Bounds height="32.0" width="32.0" x="815.0" y="75.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="32.0" width="32.0" x="0.0" y="0.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="Task_1ckj7m2" id="Shape-Task_1ckj7m2">
+        <dc:Bounds height="80.0" width="100.0" x="970.0" y="180.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="80.0" width="100.0" x="0.0" y="0.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="EndEvent_0vxfvsc" id="Shape-EndEvent_0vxfvsc">
+        <dc:Bounds height="32.0" width="32.0" x="822.0" y="202.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="32.0" width="32.0" x="0.0" y="0.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="EndEvent_0wpca53" id="Shape-EndEvent_0wpca53">
+        <dc:Bounds height="32.0" width="32.0" x="552.0" y="472.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="32.0" width="32.0" x="0.0" y="0.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="UserTask_07bqdfg" id="Shape-UserTask_07bqdfg">
+        <dc:Bounds height="80.0" width="100.0" x="790.0" y="450.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="80.0" width="100.0" x="0.0" y="0.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="ExclusiveGateway_0ogqnc4" id="Shape-ExclusiveGateway_0ogqnc4">
+        <dc:Bounds height="32.0" width="32.0" x="815.0" y="335.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="32.0" width="32.0" x="0.0" y="0.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="UserTask_1yhjmto" id="Shape-UserTask_1yhjmto">
+        <dc:Bounds height="80.0" width="100.0" x="430.0" y="230.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="80.0" width="100.0" x="0.0" y="0.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="UserTask_0vx7s25" id="Shape-UserTask_0vx7s25">
+        <dc:Bounds height="80.0" width="100.0" x="1170.0" y="180.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="80.0" width="100.0" x="0.0" y="0.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="Task_1idf8u6" id="Shape-Task_1idf8u6">
+        <dc:Bounds height="80.0" width="100.0" x="1170.0" y="430.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="80.0" width="100.0" x="0.0" y="0.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="StartEvent_2">
+        <dc:Bounds height="48.0" width="48.0" x="690.0" y="22.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="SequenceFlow_1j8rvd6" id="BPMNEdge_SequenceFlow_1j8rvd6" sourceElement="UserTask_0cexsmw" targetElement="ExclusiveGateway_0ogqnc4">
+        <di:waypoint x="670.0" y="260.0"/>
+        <di:waypoint x="670.0" y="360.0"/>
+        <di:waypoint x="824.0" y="360.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="14.0" width="23.0" x="674.0" y="306.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="SequenceFlow_0kwwsmi" id="BPMNEdge_SequenceFlow_0kwwsmi" sourceElement="UserTask_0v9t159" targetElement="EndEvent_0wpca53">
+        <di:waypoint x="340.0" y="260.0"/>
+        <di:waypoint x="340.0" y="490.0"/>
+        <di:waypoint x="552.1254921336125" y="490.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="-1.0" width="-1.0" x="-1.0" y="-1.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="SequenceFlow_027b4lj" id="BPMNEdge_SequenceFlow_027b4lj" sourceElement="UserTask_006varg" targetElement="EndEvent_0wpca53">
+        <di:waypoint x="200.0" y="260.0"/>
+        <di:waypoint x="200.0" y="490.0"/>
+        <di:waypoint x="552.1254921336125" y="490.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="-1.0" width="-1.0" x="-1.0" y="-1.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="SequenceFlow_1pgr7xf" id="BPMNEdge_SequenceFlow_1pgr7xf" sourceElement="ExclusiveGateway_16xhotd" targetElement="Task_1ckj7m2">
+        <di:waypoint x="847.0" y="91.0"/>
+        <di:waypoint x="970.0" y="220.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="14.0" width="48.0" x="906.0" y="132.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="SequenceFlow_1mlwknm" id="BPMNEdge_SequenceFlow_1mlwknm" sourceElement="ExclusiveGateway_173hwsm" targetElement="UserTask_0v9t159">
+        <di:waypoint x="455.0" y="91.0"/>
+        <di:waypoint x="390.0" y="220.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="14.0" width="78.0" x="351.0" y="143.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="SequenceFlow_1mcltqi" id="BPMNEdge_SequenceFlow_1mcltqi" sourceElement="UserTask_0vx7s25" targetElement="Task_1idf8u6">
+        <di:waypoint x="1220.0" y="260.0"/>
+        <di:waypoint x="1220.0" y="430.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="-1.0" width="-1.0" x="-1.0" y="-1.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="SequenceFlow_15pxa9h" id="BPMNEdge_SequenceFlow_15pxa9h" sourceElement="ExclusiveGateway_16xhotd" targetElement="UserTask_0cexsmw">
+        <di:waypoint x="815.0" y="91.0"/>
+        <di:waypoint x="720.0" y="220.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="14.0" width="48.0" x="726.0" y="135.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="SequenceFlow_186c70i" id="BPMNEdge_SequenceFlow_186c70i" sourceElement="UserTask_1yhjmto" targetElement="EndEvent_0wpca53">
+        <di:waypoint x="530.0" y="270.0"/>
+        <di:waypoint x="570.0" y="410.0"/>
+        <di:waypoint x="570.0" y="472.1254921336125"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="-1.0" width="-1.0" x="-1.0" y="-1.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="SequenceFlow_08uyqyq" id="BPMNEdge_SequenceFlow_08uyqyq" sourceElement="UserTask_07bqdfg" targetElement="EndEvent_0wpca53">
+        <di:waypoint x="790.0" y="490.0"/>
+        <di:waypoint x="584.0" y="488.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="-1.0" width="-1.0" x="-1.0" y="-1.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="SequenceFlow_0a2oxf7" id="BPMNEdge_SequenceFlow_0a2oxf7" sourceElement="ExclusiveGateway_173hwsm" targetElement="ExclusiveGateway_16xhotd">
+        <di:waypoint x="487.0" y="91.0"/>
+        <di:waypoint x="815.0" y="91.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="14.0" width="80.0" x="625.0" y="82.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="SequenceFlow_04xjxsz" id="BPMNEdge_SequenceFlow_04xjxsz" sourceElement="Task_1idf8u6" targetElement="UserTask_0vx7s25">
+        <di:waypoint x="1270.0" y="470.0"/>
+        <di:waypoint x="1420.0" y="470.0"/>
+        <di:waypoint x="1420.0" y="220.0"/>
+        <di:waypoint x="1270.0" y="220.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="14.0" width="21.0" x="1426.0" y="342.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="SequenceFlow_13wrv8p" id="BPMNEdge_SequenceFlow_13wrv8p" sourceElement="Task_1ckj7m2" targetElement="ExclusiveGateway_0ogqnc4">
+        <di:waypoint x="1020.0" y="260.0"/>
+        <di:waypoint x="1020.0" y="360.0"/>
+        <di:waypoint x="838.0" y="360.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="14.0" width="23.0" x="1024.0" y="306.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="SequenceFlow_1xa5oh9" id="BPMNEdge_SequenceFlow_1xa5oh9" sourceElement="Task_1idf8u6" targetElement="EndEvent_0wpca53">
+        <di:waypoint x="1220.0" y="510.0"/>
+        <di:waypoint x="1220.0" y="600.0"/>
+        <di:waypoint x="570.0" y="600.0"/>
+        <di:waypoint x="568.0" y="504.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="14.0" width="23.0" x="884.0" y="582.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="SequenceFlow_0b87ucf" id="BPMNEdge_SequenceFlow_0b87ucf" sourceElement="ExclusiveGateway_173hwsm" targetElement="UserTask_006varg">
+        <di:waypoint x="464.0" y="100.0"/>
+        <di:waypoint x="200.0" y="100.0"/>
+        <di:waypoint x="200.0" y="180.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="-1.0" width="-1.0" x="-1.0" y="-1.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="SequenceFlow_1vc5sps" id="BPMNEdge_SequenceFlow_1vc5sps" sourceElement="ExclusiveGateway_0ogqnc4" targetElement="UserTask_07bqdfg">
+        <di:waypoint x="831.0" y="367.0"/>
+        <di:waypoint x="831.0" y="450.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="-1.0" width="-1.0" x="-1.0" y="-1.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="SequenceFlow_174x14w" id="BPMNEdge_SequenceFlow_174x14w" sourceElement="StartEvent_1" targetElement="ExclusiveGateway_173hwsm">
+        <di:waypoint x="474.5" y="43.612494995996"/>
+        <di:waypoint x="474.5" y="78.5"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="-1.0" width="-1.0" x="-1.0" y="-1.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="SequenceFlow_0njlz92" id="BPMNEdge_SequenceFlow_0njlz92" sourceElement="Task_1ckj7m2" targetElement="EndEvent_0vxfvsc">
+        <di:waypoint x="970.0" y="220.0"/>
+        <di:waypoint x="854.0" y="218.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="14.0" width="33.0" x="898.0" y="202.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="SequenceFlow_0162nyl" id="BPMNEdge_SequenceFlow_0162nyl" sourceElement="UserTask_0cexsmw" targetElement="EndEvent_0vxfvsc">
+        <di:waypoint x="720.0" y="220.0"/>
+        <di:waypoint x="822.0" y="218.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="14.0" width="33.0" x="756.0" y="202.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="SequenceFlow_1jijyf9" id="BPMNEdge_SequenceFlow_1jijyf9" sourceElement="ExclusiveGateway_173hwsm" targetElement="UserTask_1yhjmto">
+        <di:waypoint x="471.0" y="107.0"/>
+        <di:waypoint x="471.0" y="230.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="14.0" width="85.0" x="437.0" y="183.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="SequenceFlow_1ayyw2v" id="BPMNEdge_SequenceFlow_1ayyw2v" sourceElement="ExclusiveGateway_173hwsm" targetElement="UserTask_0vx7s25">
+        <di:waypoint x="471.0" y="75.0"/>
+        <di:waypoint x="720.0" y="40.0"/>
+        <di:waypoint x="1220.0" y="40.0"/>
+        <di:waypoint x="1220.0" y="180.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="14.0" width="46.0" x="948.0" y="22.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</definitions>

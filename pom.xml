@@ -18,6 +18,9 @@
         <module>course-dubbo-service</module>
         <module>course-edge-service</module>
         <module>api-gateway-zuul</module>
+        <module>api-interface</module>
+        <module>tu</module>
+        <module>activiti</module>
     </modules>
 
 
