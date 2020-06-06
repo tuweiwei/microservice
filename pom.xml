@@ -21,6 +21,7 @@
         <module>api-interface</module>
         <module>tu</module>
         <module>activiti</module>
+        <module>elasticsearch</module>
     </modules>
 
 
