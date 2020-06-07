@@ -22,6 +22,16 @@ public class StreamOperator {
     }
 
     /**
+     * filter map flatmap peek
+     * distinct skip limit sortet
+     * allMatch anyMatch  noneMatch findFirst findAny
+     * foreach reduce max collect min count
+     *
+     *
+     *
+     *
+     */
+    /**
      * filter使用：过滤掉不符合断言判断的数据
      */
     @Test
@@ -30,13 +40,8 @@ public class StreamOperator {
 
                 // filter
                 .filter(sku ->
-                        SkuCategoryEnum.BOOKS
-                                .equals(sku.getSkuCategory()))
-
-                .forEach(item ->
-                        System.out.println(
-                                JSON.toJSONString(
-                                        item, true)));
+                        SkuCategoryEnum.BOOKS.equals(sku.getSkuCategory()))
+                .forEach(item -> System.out.println(JSON.toJSONString(item, true)));
     }
 
     /**

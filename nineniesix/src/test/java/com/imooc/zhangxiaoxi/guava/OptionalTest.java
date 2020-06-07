@@ -58,6 +58,8 @@ public class OptionalTest {
         Optional.ofNullable(list)
                 .map(List::stream)
                 .orElseGet(Stream::empty)
+
+
                 .forEach(System.out::println);
 
     }
