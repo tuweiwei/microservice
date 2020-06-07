@@ -6,30 +6,46 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="api-gateway-zuul" />
-        <module name="user-edge-service" />
-        <module name="user-edge-service-client" />
-        <module name="user-thrift-service" />
-        <module name="message-thrift-service-api" />
-        <module name="api-interface" />
-        <module name="course-edge-service" />
         <module name="user-thrift-service-api" />
-        <module name="course-dubbo-service" />
-        <module name="activiti" />
-        <module name="elasticsearch" />
         <module name="course-dubbo-service-api" />
+        <module name="file" />
+        <module name="course-dubbo-service" />
+        <module name="course-edge-service" />
+        <module name="gateway" />
+        <module name="user-thrift-service" />
+        <module name="nineniesix" />
+        <module name="user-edge-service-client" />
+        <module name="business" />
+        <module name="server" />
+        <module name="message-thrift-service-api" />
+        <module name="activiti" />
+        <module name="api-interface" />
+        <module name="eureka" />
+        <module name="elasticsearch" />
+        <module name="user-edge-service" />
+        <module name="system" />
+        <module name="api-gateway-zuul" />
+        <module name="generator" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="activiti" target="1.8" />
       <module name="api-gateway-zuul" target="1.7" />
       <module name="api-interface" target="1.8" />
+      <module name="business" target="1.8" />
       <module name="course-dubbo-service" target="1.7" />
       <module name="course-dubbo-service-api" target="1.7" />
       <module name="course-edge-service" target="1.7" />
-      <module name="elasticsearch" target="1.5" />
+      <module name="elasticsearch" target="1.8" />
+      <module name="eureka" target="1.8" />
+      <module name="file" target="1.8" />
+      <module name="gateway" target="1.8" />
+      <module name="generator" target="1.8" />
       <module name="message-thrift-service-api" target="1.7" />
-      <module name="micro-service" target="1.5" />
+      <module name="micro-service" target="1.8" />
+      <module name="nineniesix" target="1.8" />
+      <module name="server" target="1.8" />
+      <module name="system" target="1.8" />
       <module name="tu" target="1.5" />
       <module name="user-edge-service" target="1.7" />
       <module name="user-edge-service-client" target="1.5" />
@@ -41,6 +57,16 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="activiti" options="-parameters" />
       <module name="api-interface" options="-parameters" />
+      <module name="business" options="-parameters" />
+      <module name="course-dubbo-service-api" options="-parameters" />
+      <module name="eureka" options="-parameters" />
+      <module name="file" options="-parameters" />
+      <module name="gateway" options="-parameters" />
+      <module name="generator" options="-parameters" />
+      <module name="message-thrift-service-api" options="-parameters" />
+      <module name="nineniesix" options="" />
+      <module name="server" options="-parameters" />
+      <module name="system" options="-parameters" />
     </option>
   </component>
 </project>
