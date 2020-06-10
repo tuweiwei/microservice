@@ -9,11 +9,12 @@
         <module name="user-thrift-service-api" />
         <module name="course-dubbo-service-api" />
         <module name="file" />
+        <module name="rude" />
         <module name="course-dubbo-service" />
         <module name="course-edge-service" />
         <module name="gateway" />
         <module name="user-thrift-service" />
-        <module name="nineniesix" />
+        <module name="api-gateway-zuul" />
         <module name="user-edge-service-client" />
         <module name="business" />
         <module name="server" />
@@ -24,7 +25,7 @@
         <module name="elasticsearch" />
         <module name="user-edge-service" />
         <module name="system" />
-        <module name="api-gateway-zuul" />
+        <module name="nineniesix" />
         <module name="generator" />
       </profile>
     </annotationProcessing>
@@ -44,6 +45,7 @@
       <module name="message-thrift-service-api" target="1.7" />
       <module name="micro-service" target="1.8" />
       <module name="nineniesix" target="1.8" />
+      <module name="rude" target="1.8" />
       <module name="server" target="1.8" />
       <module name="system" target="1.8" />
       <module name="tu" target="1.5" />
@@ -65,6 +67,7 @@
       <module name="generator" options="-parameters" />
       <module name="message-thrift-service-api" options="-parameters" />
       <module name="nineniesix" options="" />
+      <module name="rude" options="-parameters" />
       <module name="server" options="-parameters" />
       <module name="system" options="-parameters" />
     </option>

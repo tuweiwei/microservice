@@ -15,6 +15,8 @@
     <file url="file://$PROJECT_DIR$/generator/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/message-thrift-service-api/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/nineniesix/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/nineniesix/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/rude/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/server/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/system/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/user-edge-service/src/main/java" charset="UTF-8" />

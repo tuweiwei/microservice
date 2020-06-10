@@ -28,6 +28,7 @@
         <module>server</module>
         <module>generator</module>
         <module>nineniesix</module>
+        <module>rude</module>
     </modules>
 
     <parent>
