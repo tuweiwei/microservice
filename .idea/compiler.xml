@@ -14,18 +14,17 @@
         <module name="course-edge-service" />
         <module name="gateway" />
         <module name="user-thrift-service" />
-        <module name="api-gateway-zuul" />
+        <module name="nineniesix" />
         <module name="user-edge-service-client" />
         <module name="business" />
         <module name="server" />
         <module name="message-thrift-service-api" />
         <module name="activiti" />
-        <module name="api-interface" />
         <module name="eureka" />
         <module name="elasticsearch" />
         <module name="user-edge-service" />
         <module name="system" />
-        <module name="nineniesix" />
+        <module name="api-gateway-zuul" />
         <module name="generator" />
       </profile>
     </annotationProcessing>
