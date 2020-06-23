@@ -1,0 +1,33 @@
+version: '2'
+services:
+  rabbitmq:
+    image: activiti/rabbitmq-stomp
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+      - "61613:61613"
+  activiti-cloud-sso-idm:
+    image: activiti/activiti-cloud-sso-idm:latest
+    ports:
+      - "8180:8180"
+  activiti-cloud-registry:
+    image: activiti/activiti-cloud-registry:latest
+    ports:
+     - "8761:8761"
+    volumes:
+        - ./apps:/config
+    environment:
+      - JAVA_OPTS=-Xmx64m -Xms64m
+      - SPRING_PROFILES_ACTIVE=native
+      - ACT_REGISTRY_NAME=apps
+      - ACT_REGISTRY_FETCH=true
+      - ACTIVITI_CLOUD_SERVICES_APPSERVICE_ENABLED=true
+  activiti-cloud-gateway:
+    image: activiti/activiti-cloud-gateway:latest
+    depends_on:
+     - activiti-cloud-registry
+    ports:
+     - "8080:8080"
+    environment:
+      - JAVA_OPTS=-Xmx64m -Xms64m
+      # - ACT_KEYCLOAK_CORS=false

@@ -1,0 +1,13 @@
+version: '2'
+services:
+  modeling-app:
+    image: activiti/activiti-cloud-modeling:latest
+    external_links:
+      - activiti-cloud-sso-idm
+      - activiti-cloud-registry
+      - rabbitmq
+    environment:
+      - ACT_MODELING_PORT=8088
+      - ACT_MODELING_HOST=activiti-cloud-modeling
+      - ACT_MODELING_APP_NAME=activiti-cloud-modeling
+      - ACT_CLOUD_CONFIG_SERVER_ENABLED=false
