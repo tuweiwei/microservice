@@ -31,7 +31,7 @@ public class CyclicBarrierTest {
         });
         List<Thread> tourismThread = new ArrayList<>();
         for (char ch : name.toCharArray()){
-            tourismThread.add(new Thread(new TourismRunnable(cyclicBarrier), "小" + ch));
+            tourismThread.add(new Thread(new TourismRunnableTest(cyclicBarrier), "小" + ch));
         }
         for (Thread thread : tourismThread){
             thread.start();

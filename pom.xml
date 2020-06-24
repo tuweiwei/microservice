@@ -18,7 +18,6 @@
         <module>course-dubbo-service</module>
         <module>course-edge-service</module>
         <module>api-gateway-zuul</module>
-        <module>api-interface</module>
         <module>activiti</module>
         <module>elasticsearch</module>
         <module>file</module>
@@ -29,6 +28,8 @@
         <module>generator</module>
         <module>nineniesix</module>
         <module>rude</module>
+        <module>kelan</module>
+        <module>algro</module>
     </modules>
 
     <parent>

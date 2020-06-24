@@ -1,11 +1,5 @@
 package org.activiti.examples;
 
-import java.io.File;
-import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Map;
-
 import org.activiti.api.process.model.ProcessDefinition;
 import org.activiti.api.process.model.ProcessInstance;
 import org.activiti.api.process.model.builders.ProcessPayloadBuilder;
@@ -30,6 +24,12 @@ import org.springframework.integration.file.FileReadingMessageSource;
 import org.springframework.integration.file.filters.SimplePatternFileListFilter;
 import org.springframework.messaging.Message;
 import org.springframework.messaging.MessageChannel;
+
+import java.io.File;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Map;
 
 @SpringBootApplication
 @EnableIntegration
